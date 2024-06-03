@@ -16,6 +16,15 @@ public class Loop {
         void process(int index);
     }
 
+    public static Thread getExecutableThread(int count, LoopWork worker){
+        return new Thread(()->execute(count, worker));
+    }//execute
+
+    public static Thread getExecutableThread(int count, LoopWorkWithIdx worker){
+        return new Thread(()->execute(count, worker));
+    }//execute
+
+
     public static void execute(int count, LoopWork worker){
         for(int  i = 0; i < count; i++){
             worker.process();
