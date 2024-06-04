@@ -1,15 +1,20 @@
 package com.ethan;
 
 
-import com.ethan.common.loop.Loop;
+import com.ethan.threadsafe.atomic.AtomicExample;
 import org.apache.log4j.Logger;
 
 public class Main {
 
     private static final Logger logger = Logger.getLogger(Main.class);
     public static void main(String[] args) {
+        runAtomicTest();
+    }
 
-        Loop.execute(5, ()-> logger.info("잘되고 있는지 확인") );
-        Loop.execute(5, (idx)-> logger.info("잘되고 있는지 확인!"+idx) );
+    public static void runAtomicTest(){
+        logger.info(AtomicExample.getInteger().executeTest());
+        logger.info(AtomicExample.getDouble().executeTest());
+        logger.info(AtomicExample.getString().executeTest());
+        logger.info(AtomicExample.getBoolean().executeTest());
     }
 }

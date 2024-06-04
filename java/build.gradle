@@ -13,5 +13,8 @@ subprojects {
 
     dependencies {
         testImplementation 'junit:junit:4.12'
+
+        compileOnly 'org.projectlombok:lombok:1.18.26'
+        annotationProcessor 'org.projectlombok:lombok:1.18.26'
     }
 }
