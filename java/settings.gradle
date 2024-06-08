@@ -1,4 +1,5 @@
 rootProject.name = 'blog-note'
 include 'app'
 include 'common'
+include 'jpa'
 

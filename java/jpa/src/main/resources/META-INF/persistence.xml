@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="jpa-example" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.ethan.entity.Employee</class> <!-- 엔티티 클래스 경로 -->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/> <!-- MariaDB JDBC 드라이버 클래스 -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/dev_note?useUnicode=true&amp;characterEncoding=utf8mb4"/> <!-- MariaDB 데이터베이스 URL -->
+            <property name="javax.persistence.jdbc.user" value="dev_note"/> <!-- MariaDB 데이터베이스 사용자 이름 -->
+            <property name="javax.persistence.jdbc.password" value="dev_note1234"/> <!-- MariaDB 데이터베이스 암호 -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/> <!-- Hibernate 사용할 데이터베이스의 dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- 테이블 자동 생성 및 갱신 설정 -->
+            <property name="hibernate.show_sql" value="true"/> <!-- SQL 쿼리 보이기 설정 -->
+        </properties>
+    </persistence-unit>
+<!-- 내용 생략 -->
+</persistence>
